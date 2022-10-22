@@ -21,9 +21,10 @@ import './index.css'
 				<p className="card-text">{users}</p>
 				<h2 style={{color:'red'}}>{amount}</h2>
 				<h2 style={{color:'blue'}}>{num}</h2>
-				<button button onClick={this.list}>START NEW QUOTE</button>
+				<button
+					>START NEW QUOTE</button>
 			</div>
 		)
 	}
 }
-export default withRouter(List);
+export default

@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
+//import PubSub from 'pubsub-js'
 import axios from 'axios'
-import {withRouter} from './withRouter.js'
+//import { Navigate } from "react-router-dom"
 
-class Search extends Component {
-	constructor(){
-        super()
-        this.search=this.search.bind(this);
-    }
-
+export default class Search extends Component {
 	search = ()=>{
 		const {keyWordElement:{value:keyWord}} = this
 		this.props.updateAppState({amount:keyWord})
@@ -20,7 +16,6 @@ class Search extends Component {
 				console.log(error);
 			}
 		)
-		this.props.navigate("/list")
 	}
 	
 	render() {
@@ -35,4 +30,3 @@ class Search extends Component {
 		)
 	}
 }
-export default withRouter(Search);
