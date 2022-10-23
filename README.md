@@ -6,8 +6,12 @@ Finally, the project realizes the navigation between two pages.
 ## Install
 
 yarn add pubsub-js
+
 yarn add axios
+
 yarn add react-router-dom
+
 yarn add react-bootstrap bootstrap
+
 
 ### `npm start`
