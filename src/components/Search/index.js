@@ -57,9 +57,9 @@ class Search extends Component {
 	render() {
 		const fromoptions = [{label: "From Currency",value: "From Currency"},
 						{label: "Australian Dollor[AUD]",value: "Australian Dollor[AUD]"},
-						{label: "United States Dollor[AUD]",value: "United States Dollor[AUD]"},];
+						{label: "United States Dollor[AUD]",value: "United States Dollor[USD]"},];
 		const tooptions = [{label: "To Currency",value: "To Currency"},
-						{label: "United States Dollor[AUD]",value: "United States Dollor[AUD]"},
+						{label: "United States Dollor[AUD]",value: "United States Dollor[USD]"},
 						{label: "Australian Dollor[AUD]",value: "Australian Dollor[AUD]"},];
 		return (
 			<Container>
