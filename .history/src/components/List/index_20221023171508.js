@@ -19,15 +19,12 @@ import './index.css'
 		const unsnum=(Number(amount)*Number(custratein)).toFixed(2)
 		return (
 			<div>
-				{isaus ? (<div>
-					<p className="card-text">{custrate}</p>
-					<h2 style={{color:'red'}}>{amount}</h2>
-					<h2 style={{color:'blue'}}>{ausnum}</h2>
-				</div>) : (<div>
-						<p className="card-text">{custratein}</p>
-						<h2 style={{color:'red'}}>{amount}</h2>
-						<h2 style={{color:'blue'}}>{unsnum}</h2>
-				 </div>)}
+				isaus ? 
+				<p className="card-text">{custrate}</p>
+				<h2 style={{color:'red'}}>{amount}</h2>
+				<h2 style={{color:'blue'}}>{ausnum}</h2> : <p className="card-text">{custratein}</p>
+				<h2 style={{color:'red'}}>{amount}</h2>
+				<h2 style={{color:'blue'}}>{unsnum}</h2>
 				<button button onClick={this.list}>START NEW QUOTE</button>
 			</div>
 		)

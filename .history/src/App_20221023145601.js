@@ -7,6 +7,7 @@ export default class App extends Component {
 	state = { 
 		custrate:[],
 		custratein:[],
+		fromcur: '',
 	} 
 
 	//更新App的state

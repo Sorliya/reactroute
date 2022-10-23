@@ -13,7 +13,7 @@ import './index.css'
 	}
 
 	render(){
-		const {custrate,custratein,amount,fromcur,tocur, isaus} = this.props
+		const {custrate,custratein,amount,isaus} = this.props
 		console.log(this.props)
 		const ausnum=(Number(amount)*Number(custrate)).toFixed(2)
 		const unsnum=(Number(amount)*Number(custratein)).toFixed(2)

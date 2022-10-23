@@ -8,13 +8,13 @@ class Search extends Component {
         super()
         this.search=this.search.bind(this);
 		this.state = {
-			fromcur: "",
-			tocur:"",
+			//fromcur: "",
+			//tocur:"",
 			isaus:true,
 		  };
 	  
-		  this.handlefromChange = this.handlefromChange.bind(this);
-		  this.handletoChange = this.handletoChange.bind(this);
+		  //this.handlefromChange = this.handlefromChange.bind(this);
+		  //this.handletoChange = this.handletoChange.bind(this);
     }
 
 	search = ()=>{
@@ -41,15 +41,15 @@ class Search extends Component {
 			this.setState({ isaus: true});
 			this.props.updateAppState({isaus: true})
 		}
-		this.setState({ fromcur: e.target.value});
-		this.props.updateAppState({fromcur:e.target.value})
+		//this.setState({ fromcur: e.target.value});
+		//this.props.updateAppState({fromcur:e.target.value})
 	  }
 
-	handletoChange(e) {
-		console.log("Selected!!");
-		this.setState({ tocur: e.target.value});
-		this.props.updateAppState({tocur: e.target.value})
-	  }
+	//handletoChange(e) {
+		//console.log("Selected!!");
+		//this.setState({ tocur: e.target.value});
+		//this.props.updateAppState({tocur: e.target.value})
+	  //}
 	
 	
 	render() {

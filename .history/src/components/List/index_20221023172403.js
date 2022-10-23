@@ -19,7 +19,7 @@ import './index.css'
 		const unsnum=(Number(amount)*Number(custratein)).toFixed(2)
 		return (
 			<div>
-				{isaus ? (<div>
+				{{isaus} ? (<div>
 					<p className="card-text">{custrate}</p>
 					<h2 style={{color:'red'}}>{amount}</h2>
 					<h2 style={{color:'blue'}}>{ausnum}</h2>

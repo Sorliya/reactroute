@@ -9,8 +9,7 @@ class Search extends Component {
         this.search=this.search.bind(this);
 		this.state = {
 			fromcur: "",
-			tocur:"",
-			isaus:true,
+			tocur:""
 		  };
 	  
 		  this.handlefromChange = this.handlefromChange.bind(this);
@@ -32,15 +31,7 @@ class Search extends Component {
 		this.props.navigate("/list")
 	}
 	handlefromChange(e) {
-		console.log(e.target.value);
-		if (e.target.value==='United States Dollor[AUD]'){
-			console.log("dao")
-			this.setState({ isaus: false});
-			this.props.updateAppState({isaus: false})
-		}else{
-			this.setState({ isaus: true});
-			this.props.updateAppState({isaus: true})
-		}
+		console.log("Fruit Selected!!");
 		this.setState({ fromcur: e.target.value});
 		this.props.updateAppState({fromcur:e.target.value})
 	  }
@@ -57,8 +48,8 @@ class Search extends Component {
 						{label: "Australian Dollor[AUD]",value: "Australian Dollor[AUD]"},
 						{label: "United States Dollor[AUD]",value: "United States Dollor[AUD]"},];
 		const tooptions = [{label: "To Currency",value: "To Currency"},
-						{label: "United States Dollor[AUD]",value: "United States Dollor[AUD]"},
-						{label: "Australian Dollor[AUD]",value: "Australian Dollor[AUD]"},];
+						{label: "Australian Dollor[AUD]",value: "Australian Dollor[AUD]"},
+						{label: "United States Dollor[AUD]",value: "United States Dollor[AUD]"},];
 		return (
 			<section className="jumbotron">
 				<h3 className="jumbotron-heading">Quick Quote</h3>
@@ -70,7 +61,7 @@ class Search extends Component {
 					</select>
 				</div>
 				<div className="select-container">
-					<select>
+					<select value={this.state.tocur} onChange={this.handletoChange}>
 						{tooptions.map((option) => (
 						<option value={option.value}>{option.label}</option>
 						))}

@@ -9,12 +9,9 @@ class Search extends Component {
         this.search=this.search.bind(this);
 		this.state = {
 			fromcur: "",
-			tocur:"",
-			isaus:true,
 		  };
 	  
-		  this.handlefromChange = this.handlefromChange.bind(this);
-		  this.handletoChange = this.handletoChange.bind(this);
+		  this.handleChange = this.handleChange.bind(this);
     }
 
 	search = ()=>{
@@ -31,53 +28,29 @@ class Search extends Component {
 		)
 		this.props.navigate("/list")
 	}
-	handlefromChange(e) {
-		console.log(e.target.value);
-		if (e.target.value==='United States Dollor[AUD]'){
-			console.log("dao")
-			this.setState({ isaus: false});
-			this.props.updateAppState({isaus: false})
-		}else{
-			this.setState({ isaus: true});
-			this.props.updateAppState({isaus: true})
-		}
-		this.setState({ fromcur: e.target.value});
+	handleChange(e) {
+		console.log("Fruit Selected!!");
+		this.setState({ fromcur: e.target.value });
 		this.props.updateAppState({fromcur:e.target.value})
-	  }
-
-	handletoChange(e) {
-		console.log("Selected!!");
-		this.setState({ tocur: e.target.value});
-		this.props.updateAppState({tocur: e.target.value})
 	  }
 	
 	
 	render() {
-		const fromoptions = [{label: "From Currency",value: "From Currency"},
+		const options = [{label: "From Currency",value: "To Currency"},
 						{label: "Australian Dollor[AUD]",value: "Australian Dollor[AUD]"},
 						{label: "United States Dollor[AUD]",value: "United States Dollor[AUD]"},];
-		const tooptions = [{label: "To Currency",value: "To Currency"},
-						{label: "United States Dollor[AUD]",value: "United States Dollor[AUD]"},
-						{label: "Australian Dollor[AUD]",value: "Australian Dollor[AUD]"},];
 		return (
 			<section className="jumbotron">
 				<h3 className="jumbotron-heading">Quick Quote</h3>
-				<div className="select-container">
-					<select value={this.state.fromcur} onChange={this.handlefromChange}>
-						{fromoptions.map((option) => (
-						<option value={option.value}>{option.label}</option>
-						))}
-					</select>
-				</div>
-				<div className="select-container">
-					<select>
-						{tooptions.map((option) => (
-						<option value={option.value}>{option.label}</option>
-						))}
-					</select>
-				</div>
 				<div>
 					<input ref={c => this.amountElement = c} type="text" placeholder="$250"/>&nbsp;
+				</div>
+				<div className="select-container">
+					<select value={this.state.fromcur} onChange={this.handleChange}>
+						{options.map((option) => (
+						<option value={option.value}>{option.label}</option>
+						))}
+					</select>
 				</div>
 				<button onClick={this.search}>GET QUOTE</button>
 			</section>

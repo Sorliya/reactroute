@@ -6,7 +6,7 @@ import List from './components/List'
 export default class App extends Component {
 	state = { 
 		custrate:[],
-		custratein:[],
+		custratein:[]
 	} 
 
 	//更新App的state
