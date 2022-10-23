@@ -15,11 +15,11 @@ import {  Container } from 'react-bootstrap';
 	}
 
 	render(){
-		const {custrate,custratein,amount, isaus} = this.props
+		const {custrate,custratein,amount,fromcur,tocur, isaus} = this.props
+		console.log(this.props)
 		const ausnum=(Number(amount)*Number(custrate)).toFixed(2)
 		const unsnum=(Number(amount)*Number(custratein)).toFixed(2)
 		const amountnum=Number(amount).toFixed(2)
-		
 		return (
 			<Container>
 				<div class="h4 pb-1 mb-4 text-dark border-bottom border-primary"><h1>Quick Quote</h1></div>

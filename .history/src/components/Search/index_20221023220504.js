@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {withRouter} from './withRouter.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {  Container } from 'react-bootstrap';
+import {  Form, Button, Col, Container, Row } from 'react-bootstrap';
 import '../index.css';
 
 class Search extends Component { 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {withRouter} from './withRouter.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {  Container } from 'react-bootstrap';
+import {  Form, Button, Col, Container, Row } from 'react-bootstrap';
 import '../index.css';
 
 class Search extends Component { 
@@ -91,29 +91,35 @@ class Search extends Component {
 					</div>
 					<div class="col-md-6">
 						<label for="inputEmail4" class="form-label" className='important'>From Currency</label>
-						<select id="inputState" class="form-select" value={this.state.fromcur} onChange={this.handlefromChange}>
+						<input type="text" placeholder="First Name" class="form-control" id="inputEmail4"/>
+					</div>
+					<div class="col-md-6">
+						<label for="inputPassword4" class="form-label" className='important'>To Currency</label>
+						<select value={this.state.fromcur} onChange={this.handlefromChange}>
 								{fromoptions.map((option) => (
 								<option value={option.value}>{option.label}</option>
 								))}
 						</select>
 					</div>
 					<div class="col-md-6">
-						<label for="inputPassword4" class="form-label" className='important'>To Currency</label>
-						<select id="inputState" class="form-select">
+						<label for="inputPassword4" class="form-label" className='important'>Amount</label>
+						<input type="text" placeholder="Last Name" class="form-control" id="inputPassword4"/>
+					</div>
+				</form>    
+
+						
+						<div className="select-container">
+							<select class="selectpicker">
 								{tooptions.map((option) => (
 								<option value={option.value}>{option.label}</option>
 								))}
-						</select>
-					</div>
-					<div class="col-md-6">
-						<label for="inputPassword4" class="form-label" className='important'>Amount</label>
-						<input type="text" placeholder="$250" class="form-control" id="inputPassword4" ref={c => this.amountElement = c}/>
-					</div>
-				</form>
-				<div></div>
-				<div class="d-grid gap-2 col-6 mx-auto">
-						<button class="btn btn-primary" type="button" onClick={this.search}>GET QUOTE</button>
-				</div>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Amount</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ref={c => this.amountElement = c} type="text" placeholder="$250"/>&nbsp;
+						</div>
+						<Button variant="primary" onClick={this.search}>GET QUOTE</Button>
 				</div>
 			</Container>
 		)

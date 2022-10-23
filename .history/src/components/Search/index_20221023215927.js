@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {withRouter} from './withRouter.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {  Container } from 'react-bootstrap';
+import {  Form, Button, Col, Container, Row } from 'react-bootstrap';
 import '../index.css';
 
 class Search extends Component { 
@@ -107,13 +107,16 @@ class Search extends Component {
 					</div>
 					<div class="col-md-6">
 						<label for="inputPassword4" class="form-label" className='important'>Amount</label>
-						<input type="text" placeholder="$250" class="form-control" id="inputPassword4" ref={c => this.amountElement = c}/>
+						<input type="text" placeholder="Last Name" class="form-control" id="inputPassword4"/>
 					</div>
-				</form>
-				<div></div>
-				<div class="d-grid gap-2 col-6 mx-auto">
-						<button class="btn btn-primary" type="button" onClick={this.search}>GET QUOTE</button>
-				</div>
+				</form>    
+						<div class="mb-3">
+							
+							<input ref={c => this.amountElement = c} placeholder="$250"/>
+							
+							&nbsp;
+						</div>
+						<Button variant="primary" onClick={this.search}>GET QUOTE</Button>
 				</div>
 			</Container>
 		)
