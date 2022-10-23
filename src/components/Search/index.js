@@ -35,7 +35,7 @@ class Search extends Component {
 	}
 	handlefromChange(e) {
 		console.log(e.target.value);
-		if (e.target.value==='United States Dollor[AUD]'){
+		if (e.target.value==='United States Dollor[USD]'){
 			console.log("dao")
 			this.setState({ isaus: false});
 			this.props.updateAppState({isaus: false})
